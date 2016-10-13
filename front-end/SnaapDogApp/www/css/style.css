@@ -1,7 +1,30 @@
 /* Empty. Add your own CSS if you like */
+
+.body {
+	margin: 0;
+
+}
+.landing {
+	text-align: center;
+	background-color: rgba(163, 158, 146, .5);
+	
+}
+.landing img{	
+	width:  100%;
+	margin: -10px;
+	overflow: hidden;
+}
+
 .landing-title {
 	font-family: 'Indie Flower', fantasy;
 	text-align: center;
 	font-size:  50px;
-	padding-top: 100px;
+	
+}
+.button-neutral {
+	background-color: #4A7787;
+	color: white;
+	font-weight: 900;
+	height: 50px;
+	border-radius: 10px;
 }
