@@ -28,7 +28,7 @@
 	font-size:  50px;
 }
 
-#log-in-button {
+#log-in-button, .submit-button {
 	background-color: #4A7787;
 	display: block;
 	color: white;
@@ -40,7 +40,14 @@
 	margin-bottom: 5px;
 	text-decoration: none;
 }
-
+.login, .register {
+	text-align: center;
+}
+.submit-button  {
+	width: 100px;
+	margin-bottom: 10px;
+}
 .plain {
 	text-decoration: none;
 }
+
