@@ -50,10 +50,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'RegisterCtrl'
   })
 
-  .state('landing', {
-    url: '/landing',
-    templateUrl: 'templates/landing.html'
-  })
+  // .state('landing', {
+  //   url: '/landing',
+  //   templateUrl: 'templates/landing.html'
+  // })
 
   // Each tab has its own nav history stack:
 
@@ -99,6 +99,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/landing');
+  $urlRouterProvider.otherwise('/login');
 
 });
