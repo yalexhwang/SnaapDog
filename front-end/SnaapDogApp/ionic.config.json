@@ -1,6 +1,4 @@
-
 {
-  "name": "SnaapDogApp",
-  "app_id": "",
-  "gulpStartupTasks": ["sass", "watch"]
+  "name": "ionic-test",
+  "app_id": ""
 }

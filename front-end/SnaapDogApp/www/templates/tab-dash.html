@@ -1,7 +1,10 @@
-<ion-view view-title="Home">
+<ion-view view-title="Dashboard">
   <ion-content class="padding">
-    <div>
-     <h2 class="landing-title">SnaapDog</h2>
-    </div>
+    <form ng-submit="register()">
+      Username <input type="text" ng-model="user.username">
+      Password <input type="password" ng-model="user.password">
+      Email <input type="email" ng-model="user.email">
+      <button type="submit">Register</button>
+    </form> 
   </ion-content>
 </ion-view>
