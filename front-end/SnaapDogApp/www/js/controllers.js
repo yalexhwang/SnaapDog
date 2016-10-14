@@ -6,7 +6,11 @@ angular.module('starter.controllers', [])
 
 .controller('LogInCtrl', function($scope, $http, $stateParams) {
 
-})
+  })
+
+.controller('RegisterCtrl', function($scope, $http, $stateParams) {
+
+  })
 
 .controller('ChatsCtrl', function($scope, Chats) {
   // With the new view caching in Ionic, Controllers are only called
