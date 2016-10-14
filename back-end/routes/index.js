@@ -179,7 +179,9 @@ router.post('updatePosting',function(req,res,next){
 //Beginning of shelter listing
 
 //Beginning of personal post lisitng
-
+router.get('/personalPosts',function(res,req,next){
+	
+})
 //Beginning of lostList 
 //This pulls from database to display all the postings of dogs
 router.get('/lostList',function(req,res,next){
