@@ -1,19 +1,20 @@
 /* Empty. Add your own CSS if you like */
 
 .body {
-	margin: 0;
-
+	
 }
 .fullWidth {
 	width:  100%;
 	margin:  0px;
 	padding: 0px;
 }
+
 .landing {
 	padding-top: 43px;
 	text-align: center;
+	/* background-color: #D1CFC9 !important; */
 	background-color: rgba(163, 158, 146, .5);
-	height: 1000px;
+	height: 100%;
 	
 }
 .landing img{	
@@ -22,11 +23,11 @@
 }
 
 .landing-title {
-	font-family: 'Indie Flower', fantasy;
+	font-family: 'Indie Flower',fantasy ;
 	text-align: center;
 	font-size:  50px;
-	
 }
+
 #log-in-button {
 	background-color: #4A7787;
 	display: block;
@@ -37,5 +38,9 @@
 	width: 200px;
 	margin: 25px auto;
 	margin-bottom: 5px;
+	text-decoration: none;
+}
 
+.plain {
+	text-decoration: none;
 }
