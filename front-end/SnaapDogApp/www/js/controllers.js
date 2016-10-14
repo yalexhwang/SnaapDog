@@ -1,5 +1,7 @@
 angular.module('starter.controllers', [])
 
+
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('LogInCtrl', function($scope, $http, $stateParams) {
@@ -34,3 +36,5 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+
