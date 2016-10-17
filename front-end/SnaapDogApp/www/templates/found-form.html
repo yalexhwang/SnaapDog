@@ -1,0 +1,105 @@
+Beginning of Found Post Form -->
+
+<div class="bar bar-header bar-light">
+  <h1 class="title">Post</h1>
+</div>
+<form >
+<div class="list">
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Upload</span>
+    <input type="file" name="file" placeholder="photo">
+    <img class="fit" ng-if="uploadUri" ng-src="">
+ 	 <a ng-href="" ng-bind="uploadUri"></a>
+  </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">Lost Status</span>
+    <input type="number" placeholder="Last Name">
+  </label>
+ <label class="item item-input">
+  <span class="input-label">Size</span>
+  <input type="text">
+</label>
+<label class="item item-input">
+  <span class="input-label">Username</span>
+  <input type="text">
+</label>
+
+<!-- Size list -->
+<div class="size-list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Size
+    </div>
+    <select>
+      <option>Extra small</option>
+      <option selected>Small</option>
+      <option>Large</option>
+      <option>Extra Large</option>
+    </select>
+  </label>
+
+</div><!-- End of size list -->
+
+<!-- Color list -->
+<div class="color-list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Color
+    </div>
+    <select>
+      <option>Brown</option>
+      <option selected>Black</option>
+      <option>White</option>
+      <option>Grey</option>
+    </select>
+  </label>
+
+</div> <!-- End of color list -->
+
+<!-- hair length -->
+<div class="hair-length-list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Hair Length
+    </div>
+    <select>
+      <option>Short</option>
+      <option selected>Medium</option>
+      <option>Long</option> 
+    </select>
+  </label>
+
+</div> <!-- End of hair length list -->
+
+<!-- Breed list -->
+<div class="breed-list">
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+     Breed
+    </div>
+    <select ng-model="breeds" ng-options"breed in breeds">
+    <!-- Breeds go in here with ng-toptions -->
+    </select>
+  </label>
+</div> <!-- End of breed list -->
+
+<label class="item item-input">
+  <span class="input-label">Dog Tag</span>
+  <input type="text">
+</label>
+
+<!-- Text Area for Description -->
+ <ion-item>
+   <ion-label floating>Description</ion-label>
+   <ion-textarea></ion-textarea>
+ </ion-item> <!-- End of Description area -->
+
+</div>  <!-- End of Found Post form -->
+<button class="button button-calm" >
+  button-calm
+</button>
+</form>
