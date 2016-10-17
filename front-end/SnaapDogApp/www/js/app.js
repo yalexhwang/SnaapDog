@@ -32,32 +32,20 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-  .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
-  })
-
-  .state('login', {
-    url: '/login',
-    templateUrl: 'templates/login.html',
+  .state('landing', {
+    url: '/landing',
+    templateUrl: 'templates/landing.html',
     controller: 'LogInCtrl'
-  })
+  });
 
-  .state('register', {
-    url: '/register',
-    templateUrl: 'templates/register.html',
-    controller: 'RegisterCtrl'
-  })
+  $stateProvider
+   .state('tabs', {
+      url: "/tabs",
+      templateUrl: "templates/tabs.html",
+      controller: 'TabsCtrl'
+    })
 
-  // .state('landing', {
-  //   url: '/landing',
-  //   templateUrl: 'templates/landing.html'
-  // })
-
-  // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
+   .state('tabs.dash', {
     url: '/dash',
     views: {
       'tab-dash': {
@@ -67,8 +55,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tabs.chats', {
+      url: '/tabs/chats',
       views: {
         'tab-chats': {
           templateUrl: 'templates/tab-chats.html',
@@ -76,8 +64,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       }
     })
-  .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+  .state('tabs.chat-detail', {
+      url: '/tabs/chats/:chatId',
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
@@ -86,19 +74,92 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tabs.account', {
+    url: '/tabs/account',
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
 
+  
+  .state('register', {
+    url: '/register',
+    templateUrl: 'templates/register.html',
+    controller: 'RegisterCtrl'
+  })
 
+ 
+
+    // .state('app.search', {
+    //   url: "/search",
+    //   views: {
+    //     'tabsContent' :{
+    //       templateUrl: "search.html",
+    //       controller: 'SearchCtrl'
+    //     }
+    //   }
+    // })
+    // .state('app.contact', {
+    //   url: "/contact",
+    //   views: {
+    //     'tabsContent' :{
+    //       templateUrl: "contact.html",
+    //       controller: 'PlaylistsCtrl'
+    //     },
+    //     'tabsList': {
+    //       templateUrl : "tabsBrowse.html",
+    //       controller: 'PlaylistsCtrl'
+    //     }
+    //   }
+    // })
+    // .state('app.browse', {
+    //   url: "/browse",
+    //   views: {
+    //     'tabsContent' :{
+    //       templateUrl: "browse.html"
+    //     },
+    //     'tabsList': {
+    //       templateUrl : "tabsBrowse.html"
+    //     }
+    //   }
+    // })
+    // .state('app.playlists', {
+    //   url: "/playlists",
+    //   views: {
+    //     'tabsContent' :{
+    //       templateUrl: "playlists.html",
+    //       controller: 'PlaylistsCtrl'
+    //     },
+    //     'tabsList': {
+    //       templateUrl : "tabsPlaylists.html",
+    //       controller: 'PlaylistCtrl'
+    //     }
+    //   }
+    // })
+
+    // .state('app.single', {
+    //   url: "/playlists/:playlistId",
+    //   views: {
+    //     'tabsContent' :{
+    //       templateUrl: "playlist.html",
+    //       controller: 'PlaylistCtrl'
+    //     },
+    //     'tabsList': {
+    //       templateUrl : "tabsPlaylist.html",
+    //       controller: 'PlaylistCtrl'
+    //     }
+    //   }
+    // });
+
+// Each tab has its own nav history stack:
+
+  
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/landing');
 
 });
+
