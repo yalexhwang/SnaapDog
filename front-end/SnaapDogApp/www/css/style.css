@@ -50,4 +50,7 @@
 .plain {
 	text-decoration: none;
 }
+#map {
+	height: 250px;
+}
 
