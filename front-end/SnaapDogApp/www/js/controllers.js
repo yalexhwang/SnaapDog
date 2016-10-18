@@ -17,6 +17,9 @@ angular.module('starter.controllers', [])
   $scope.home = function(){
     $state.go('tabs.dash', {});
   };
+  $scope.landing = function(){
+    $state.go('landing', {});
+  };
   })
 
 .controller('TabsCtrl', function($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
