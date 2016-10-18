@@ -30,51 +30,68 @@ angular.module('starter.controllers', [])
 
 .controller('ListingsCtrl', function($scope, $ionicModal) {
   $scope.message = "works";
-    $scope.strays = [
-  {
-    photo: "img/stray1.jpeg",
-    size: 'large',
-    color: 'brown/black'
-  },
-   {
-    photo: "img/stray2.jpeg",
-    size: 'large',
-    color: 'brown/white'
-  },
-   {
-    photo: "img/stray3.jpeg",
-    size: 'large',
-    color: 'tan'
-  },
-   {
-    photo: "img/stray4.jpeg",
-    size: 'small',
-    color: 'brown/black'
-  },
-   {
-    photo: "img/stray5.jpeg",
-    size: 'large',
-    color: 'grey'
-  },
-   {
-    photo: "img/stray6.jpeg",
-    size: 'large',
-    color: 'white/black'
+  $scope.data = {
+    "filter": "lost",
+      "strays": [
+    {
+      photo: "img/stray1.jpeg",
+      size: 'large',
+      color: 'brown/black',
+      status: 'lost'
+    },
+     {
+      photo: "img/stray2.jpeg",
+      size: 'large',
+      color: 'brown/white',
+      status: 'found'
+    },
+     {
+      photo: "img/stray3.jpeg",
+      size: 'large',
+      color: 'tan',
+      status: 'found'
+    },
+     {
+      photo: "img/stray4.jpeg",
+      size: 'small',
+      color: 'brown/black',
+      status: 'found'
+    },
+     {
+      photo: "img/stray5.jpeg",
+      size: 'large',
+      color: 'grey',
+      status: 'lost'
+    },
+     {
+      photo: "img/stray6.jpeg",
+      size: 'large',
+      color: 'white/black',
+      status: 'lost'
+    }
+    ] //end strays object
   }
-  ] //end strays object
 
   $scope.options = {
     loop: false,
     effect: 'fade',
     speed: 500
   }
+//SORT LIST
+$scope.sortType = 'status'
+$scope.sortReverse = false;
+$scope.searchPosts = "";
+//SORT LIST END
+
+
  //MODAL
   $ionicModal.fromTemplateUrl('templates/modal.html', {
     scope: $scope, animation: 'slide-in-up'
   }).then(function(modal) {
     $scope.modal = modal;
   });
-    $scope.openModal = function() {
+    $scope.openModal = function(stray) {
+    $scope.stray = stray;
     $scope.modal.show();
     };
     $scope.closeModal = function() {
@@ -93,7 +110,20 @@ angular.module('starter.controllers', [])
   $scope.$on('modal.removed', function() {
     // Execute action
   });
-
+//MODAL END
+//---- UNCOMMENT THIS AFTER TEST!
+// .controller('listingCtrl', function($scope, $http) {
+//  var url = "http://localhost:3000";
+//  $http.post(url + '/listing')
+//  .then(function succeess(rspns) {
+//    console.log(rspns.data);
+//    $scope.strays = rspns.docs;
+//  }, function fail(rspns) {
+//    console.log(rspns);
+//  });
+//  console.log("listings");
+// })
+//----
 
 }) //end listing ctrl
 

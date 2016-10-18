@@ -46,6 +46,7 @@
 .submit-button  {
 	width: 100px;
 	margin-bottom: 10px;
+	border: 1px solid black;
 }
 .plain {
 	text-decoration: none;
@@ -54,11 +55,21 @@
 	height: 250px;
 }
 .stray_listings {
-
+	
+	margin: 0;
 
 
 }
 .stray_listings img {
-	max-width: 80px;
+	width: 100%;
+	max-height: 50%;
+	margin: auto;
+	text-align: center;
+}
+.activeButton {
+	background-color: lightgrey;
+}
+.inactiveButton{
+	background-color: #4A7787;
 }
 
