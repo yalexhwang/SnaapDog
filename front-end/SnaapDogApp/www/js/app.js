@@ -84,12 +84,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tabs.something', {
+    url: '/tabs/something',
+    views: {
+      'tab-something': {
+        templateUrl: 'templates/tab-something.html',
+        controller: 'SomethingCtrl'
+      }
+    }
+  })
+
   
   .state('register', {
     url: '/register',
     templateUrl: 'templates/register.html',
     controller: 'RegisterCtrl'
-  })
+  });
 
  
 
@@ -153,10 +163,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     //     }
     //   }
     // });
-
-// Each tab has its own nav history stack:
-
-  
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/landing');

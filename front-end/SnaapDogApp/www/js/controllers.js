@@ -23,6 +23,11 @@ angular.module('starter.controllers', [])
 .controller('TabsCtrl', function($scope, $ionicModal, $timeout) {
   })
 
+
+.controller('SomethingCtrl', function($scope, $http) {
+  console.log("something")
+})
+
 // .controller('PlaylistsCtrl', function($scope) {
 //   $scope.playlists = c;
 //   $scope.disable=true;
@@ -57,6 +62,7 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
 
 // .directive();
 
