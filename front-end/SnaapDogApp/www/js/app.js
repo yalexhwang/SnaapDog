@@ -60,6 +60,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     templateUrl: 'templates/landing.html'
   })
 
+  .state('listings', {
+    url: '/listings',
+    templateUrl: 'templates/listings.html',
+    controller: 'ListingsCtrl'
+  })
+
   // Each tab has its own nav history stack:
 
   .state('tab.dash', {
@@ -107,3 +113,5 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   $urlRouterProvider.otherwise('/landing');
 
 });
+
+

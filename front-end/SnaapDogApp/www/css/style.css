@@ -53,4 +53,12 @@
 #map {
 	height: 250px;
 }
+.stray_listings {
+
+
+
+}
+.stray_listings img {
+	max-width: 80px;
+}
 

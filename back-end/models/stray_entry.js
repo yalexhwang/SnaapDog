@@ -13,15 +13,16 @@ var stray_entrySchema = new Schema({
 			city: { type: String },
 			state: { type: String },
 			zip: { type: String }
-		},
-		status: { type: Number, required: true },
-		size: { type: Number, required: true },
-		color: {  type: Number, required: true },
-		hair: { type: Number, required: true}, 
-		breed: { type: Array }
-		tag_id: { type: String },
-		description: { type: String }
-	}, {timestamps: true} 
-});
+		}
+	},
+	dog_name: { type: String, required: true},
+	status: { type: Number, required: true },
+	size: { type: Number, required: true },
+	color: {  type: Number, required: true },
+	coat: { type: Number, required: true}, 
+	breed: { type: Array },
+	tag_id: { type: String },
+	description: { type: String },
+	}, {timestamps: true});
 
 module.exports = mongoose.model('stray_entry', stray_entrySchema);

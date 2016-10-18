@@ -1,5 +1,8 @@
 angular.module('starter.controllers', [])
 
+
+
+
 .controller("PictureCtrl", function($scope, $cordovaCamera) {
     document.addEventListener("deviceready", function () {
          $scope.takePicture = function() {
@@ -25,6 +28,74 @@ angular.module('starter.controllers', [])
     })
 })
 
+.controller('ListingsCtrl', function($scope, $ionicModal) {
+  $scope.message = "works";
+    $scope.strays = [
+  {
+    photo: "img/stray1.jpeg",
+    size: 'large',
+    color: 'brown/black'
+  },
+   {
+    photo: "img/stray2.jpeg",
+    size: 'large',
+    color: 'brown/white'
+  },
+   {
+    photo: "img/stray3.jpeg",
+    size: 'large',
+    color: 'tan'
+  },
+   {
+    photo: "img/stray4.jpeg",
+    size: 'small',
+    color: 'brown/black'
+  },
+   {
+    photo: "img/stray5.jpeg",
+    size: 'large',
+    color: 'grey'
+  },
+   {
+    photo: "img/stray6.jpeg",
+    size: 'large',
+    color: 'white/black'
+  }
+  ] //end strays object
+
+  $scope.options = {
+    loop: false,
+    effect: 'fade',
+    speed: 500
+  }
+ //MODAL
+  $ionicModal.fromTemplateUrl('templates/modal.html', {
+    scope: $scope, animation: 'slide-in-up'
+  }).then(function(modal) {
+    $scope.modal = modal;
+  });
+    $scope.openModal = function() {
+    $scope.modal.show();
+    };
+    $scope.closeModal = function() {
+  
+    $scope.modal.hide();
+  };
+  // Cleanup the modal when we're done with it!
+  $scope.$on('$destroy', function() {
+    $scope.modal.remove();
+  });
+  // Execute action on hide modal
+  $scope.$on('modal.hidden', function() {
+    // Execute action
+  });
+  // Execute action on remove modal
+  $scope.$on('modal.removed', function() {
+    // Execute action
+  });
+
+
+}) //end listing ctrl
 
 .controller('DashCtrl', function($scope) {
 
@@ -63,6 +134,11 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 });
+
+
+
+
+
 
 
 
