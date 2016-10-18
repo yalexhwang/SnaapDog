@@ -36,11 +36,38 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     url: '/landing',
     templateUrl: 'templates/landing.html',
     controller: 'LogInCtrl'
+  })
+
+  .state('something', {
+    url: '/something',
+    templateUrl: 'templates/tab-something.html',
+    controller: 'RegisterCtrl'
+  })
+
+  .state('account', {
+    url: '/account',
+    templateUrl: 'templates/tab-account.html',
+    controller: 'AccountCtrl'
+  })
+
+  .state('lorem', {
+    url: '/lorem',
+    templateUrl: 'templates/lorem.html'
+    // controller: 'AccountCtrl'
+  })
+
+  .state('register', {
+    url: '/register',
+    templateUrl: 'templates/register.html',
+    controller: 'RegisterCtrl'
   });
+
+
 
   $stateProvider
    .state('tabs', {
       url: "/tabs",
+      abstract: true,
       templateUrl: "templates/tabs.html",
       controller: 'TabsCtrl'
     })
@@ -50,7 +77,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-dash': {
         templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+        controller: 'TabsCtrl'
       }
     }
   })
@@ -60,7 +87,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-chats': {
           templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+          controller: 'TabsCtrl'
         }
       }
     })
@@ -69,7 +96,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-chats': {
           templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+          controller: 'TabsCtrl'
         }
       }
     })
@@ -79,29 +106,25 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     views: {
       'tab-account': {
         templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+        controller: 'TabsCtrl'
       }
     }
-  })
-
-  .state('tabs.something', {
-    url: '/tabs/something',
-    views: {
-      'tab-something': {
-        templateUrl: 'templates/tab-something.html',
-        controller: 'SomethingCtrl'
-      }
-    }
-  })
-
-  
-  .state('register', {
-    url: '/register',
-    templateUrl: 'templates/register.html',
-    controller: 'RegisterCtrl'
   });
 
- 
+  
+  
+  
+
+
+//  $stateProvider
+//  .state('app', {
+//     url: '/app',
+//     abstract: true,
+//     templateUrl: 'templates/tabs.html',
+//     controller: 'SomethingCtrl'
+//   })
+// 
+
 
     // .state('app.search', {
     //   url: "/search",

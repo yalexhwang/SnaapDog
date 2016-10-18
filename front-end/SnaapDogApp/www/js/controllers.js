@@ -4,9 +4,6 @@ angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope, $ionicSideMenuDelegate) {
   console.log('hello tab dash');
-  $scope.openMenuLeft = function() {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
 })
 
 .controller('LogInCtrl', function($scope, $http, $stateParams, $state) {
@@ -16,11 +13,16 @@ angular.module('starter.controllers', [])
 
   })
 
-.controller('RegisterCtrl', function($scope, $http, $stateParams) {
-
+.controller('RegisterCtrl', function($scope, $http, $stateParams, $state) {
+  $scope.home = function(){
+    $state.go('tabs.dash', {});
+  };
   })
 
-.controller('TabsCtrl', function($scope, $ionicModal, $timeout) {
+.controller('TabsCtrl', function($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
+  $scope.openMenuLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
   })
 
 
@@ -57,9 +59,12 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, $state) {
   $scope.settings = {
     enableFriends: true
+  };
+  $scope.home = function(){
+    $state.go('tabs.dash', {});
   };
 });
 
