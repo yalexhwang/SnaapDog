@@ -50,6 +50,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     controller: 'RegisterCtrl'
   })
 
+ .state('found-form', {
+    url: '/found-form',
+    templateUrl: 'templates/found-form.html',
+    controller: 'foundCtrl'
+  })
   // .state('landing', {
   //   url: '/landing',
   //   templateUrl: 'templates/landing.html'

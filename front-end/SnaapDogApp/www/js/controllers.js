@@ -37,4 +37,24 @@ angular.module('starter.controllers', [])
   };
 });
 
+// .controller('foundCtrl',function($scope,$http){
+//     var url = "http://localhost:3000";
+//     $scope.found={};
+//     console.log($scope.found);
+//      $scope.foundPost=function($scope.found)
+//     $http.post(url+'/posting',{
+//       found:$scope.found
+//     }).then(function success(rspns){
+//       console.log(rspns);
+//     } function success(rspns){
+//       console.log(rspns);
+//     });
+//   };
+// })
+
+
+
+
+
+
 

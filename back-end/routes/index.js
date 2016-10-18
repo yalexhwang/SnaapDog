@@ -104,9 +104,10 @@ router.post('/login',function(req,res,next){
 }) //end of login router
 
 //Beginning of Posting 
-router.post('/posting',function(req,res,next){
+router.post('/found',function(req,res,next){
 	//if user logged in
 	//bring up being able to add more than one post per user for a time period
+	var found=req.body.found;
 	User.findOne{
 		username:req.body.username
 		},
@@ -116,19 +117,27 @@ router.post('/posting',function(req,res,next){
 			}else{
 
 				var newPosting=new Posting({
-					photo:req.body.photo,
-					location: //find out how this would be done in backend,
-					address: //figoure out how to do address,
-					status:req.body.status,
-					contact://same with contact,
-					dog_name:req.body.dog_name,
-					reward:req.body.reward,
-					size:req.body.size,
-					color:req.body.color,
-					hair:req.body.hair,
-					breed:req.body.breed,
-					tag_id:req.body.tag_id,
-					description:req.body.description
+					photo:found.photo,
+					location:  {
+						coord:{
+							lat:found.lat
+							lng:found.lng
+						}
+					},
+					address:{
+						line1:found.line1,
+						city:found.city,
+						state:found.state,
+						zip:found.zip
+					}
+					status:found.status,
+					dog_name:found.dog_name,
+					size:found.size,
+					color:found.color,
+					hair:found.hair,
+					breed:found.breed,
+					tag_id:found.tag_id,
+					description:found.description
 				} // end of var newPosting
 			}
 				newPosting.save()
@@ -299,7 +308,7 @@ router.post('/login',function(req,res,next){
 }) //end of login router
 
 //Beginning of Posting 
-router.post('/posting',function(req,res,next){
+router.post('/lostPost',function(req,res,next){
 	//if user logged in
 	//bring up being able to add more than one post per user for a time period
 	User.findOne{
@@ -307,15 +316,37 @@ router.post('/posting',function(req,res,next){
 		},
 		function(error,document){
 			if(error){
-				console.log("Error in finding user in posting")
-			}else{
+				
+				res.json({
+				status: "Error in getting stray_entries",
+				passFail: 0
+			});
+			}else if{
+				 (docs == null) {
+				console.log('null');
+				res.json({status: 'No docs found, null', passFail: 0});
+			} else {
 
 				var newPosting=new Posting({
 					photo:req.body.photo,
-					location: //find out how this would be done in backend,
-					address: //figoure out how to do address,
+					location:{
+						coord: {
+							lat: req.body.lat,
+							lng: req.body.lng
+						},
+					} 
+				address: {
+					line1: req.body.line1,
+					city: req.body.city,
+					state: req.body.state,
+					zip: req.body.zip
+		},
 					status:req.body.status,
-					contact://same with contact,
+					contact:{
+						name: req.body.name,
+						phone: req.body.phone,
+						email: req.body.email
+					}	
 					dog_name:req.body.dog_name,
 					reward:req.body.reward,
 					size:req.body.size,
@@ -332,11 +363,75 @@ router.post('/posting',function(req,res,next){
 
 }); //end of Posting 
 
+
+router.post('/stray_entries', function(req, res, next) {
+	console.log("/stray_entries");
+	console.log(req.body);
+	Stray_entry.find({}, function(err, docs) {
+		console.log("docs");
+		console.log(docs);
+		if (err) {
+			console.log('error');
+			console.log(err);
+			res.json({
+				status: "Error in getting stray_entries",
+				passFail: 0
+			});
+		} else {
+			console.log('not error');
+			if (docs == null) {
+				console.log('null');
+				res.json({status: 'No docs found, null', passFail: 0});
+			} else {
+				console.log(docs);
+				res.json({
+					passFail: 1,
+					docs: docs
+				});
+				var newPosting=new Posting({
+					photo:found.photo,
+					location:  {
+						coord:{
+							lat:found.lat
+							lng:found.lng
+						}
+					},
+					address:{
+						line1:found.line1,
+						city:found.city,
+						state:found.state,
+						zip:found.zip
+					}
+					status:found.status,
+					dog_name:found.dog_name,
+					size:found.size,
+					color:found.color,
+					hair:found.hair,
+					breed:found.breed,
+					tag_id:found.tag_id,
+					description:found.description
+
+			});
+					newPosting.save()
+		}
+	};
+});
+
+
+
+
+
 //Beginning of delete posting
 router.get('/deletePost',function(req,res,next){
 	Posting.find()
-		.then function(document){
-			res.render({'posting',title:'Express'})
+		.exec(function(err,docs){
+			if(err){
+				return next(err)
+			}else{
+				res.json(docs)
+				db.collection.remove()
+			}
+		})
 		}
 
 }); //end of delete posting
@@ -344,6 +439,7 @@ router.get('/deletePost',function(req,res,next){
 
 //Beginning of update post
 router.post('updatePosting',function(req,res,next){
+	// var found = req.body.found;
 	User.findOne{
 		id:req.body.id
 	}
@@ -351,8 +447,19 @@ router.post('updatePosting',function(req,res,next){
 	function(error,document){
 		if(error){
 			console.log("error in updatePosting")
-
-		}else{
+			res.json({
+					passFail: 0,
+					status: "Failed at findOne"
+				});
+		}else
+			if (docs=null){
+				console.log(docs);
+					res.json({
+						passFail: 0,
+						status: "Failed at findOne, doc is null"
+					});
+			} else {
+			
 			document.photo:req.body.photo;
 			document.location: //find out how this would be done in backend,
 			document.address: //figoure out how to do address,
@@ -375,16 +482,30 @@ router.post('updatePosting',function(req,res,next){
 
 //Beginning of personal post lisitng
 router.get('/personalPosts',function(res,req,next){
-	
-})
+	Posting.find().sort(-date)
+		.exec(function(err,docs){
+			if(err){
+				return next(err)
+			}else{
+				res.json(docs)
+				
+			}
+		})
+		}
+}) // end of personalPosts
 //Beginning of lostList 
 //This pulls from database to display all the postings of dogs
 router.get('/lostList',function(req,res,next){
-	Posting.find(
-		 .then function(document){
-		 	res.render({'posting',title:'Express'});
-		 }
-	
+	Posting.find()sort(-date)
+		.exec(function(err,docs){
+			if(err){
+				return next(err)
+			}else{
+				res.json(docs)
+				
+			}
+		})
+		}
 }); //end of lost list 
 
 module.exports = router;
