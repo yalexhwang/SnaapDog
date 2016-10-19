@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ui.router'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ui.router','ngCordova'])
 //put in 'ngCordova'
 
 .run(function($ionicPlatform) {
@@ -90,6 +90,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
+// .state('tab.main', {
+//     url: '/main',
+//     views: {
+//       'tab-main': {
+//         templateUrl: 'templates/tab-main.html',
+//         controller: 'mainCtrl'
+//       }
+//     }
+//   })
+
   .state('tabs.chats', {
       url: '/tabs/chats',
       views: {
@@ -119,15 +129,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('tab.main', {
-    url: '/main',
-    views: {
-      'tab-main': {
-        templateUrl: 'templates/tab-main.html',
-        controller: 'mainCtrl'
-      }
-    }
-  })
   .state('tab.snaap', {
     url: '/snaap',
     views: {
@@ -137,14 +138,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
- .state('tab.test', {
-    url: '/test',
-    views: {
-      'tab-main': {
-        templateUrl: 'templates/tab-test.html'
-      }
-    }
-  })
+ // .state('tab.test', {
+ //    url: '/test',
+ //    views: {
+ //      'tab-main': {
+ //        templateUrl: 'templates/tab-test.html'
+ //      }
+ //    }
+ //  })
   .state('tab.post', {
     url: '/post',
     views: {
@@ -154,15 +155,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
-  .state('tab.posted', {
-    url: '/posted',
-    views: {
-      'tab-post': {
-        templateUrl: 'templates/tab-posted.html',
-        controller: 'postCtrl'
-      }
-    }
-  })
+  // .state('tab.posted', {
+  //   url: '/posted',
+  //   views: {
+  //     'tab-post': {
+  //       templateUrl: 'templates/tab-posted.html',
+  //       controller: 'postCtrl'
+  //     }
+  //   }
+  // })
 
   .state('tab.listing', {
     url: '/listing',

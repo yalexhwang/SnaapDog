@@ -1,0 +1,40 @@
+{ 
+    "_id" : ObjectId("5804ed48c9b06117fe8b678d"), 
+    "breeds" : {
+        "0" : "Afghan Hound", 
+        "1" : "Airedale Terrier", 
+        "2" : "Akita", 
+        "3" : "Alaskan Malamute", 
+        "4" : "American Cocker Spaniel", 
+        "5" : "American Eskimo Dog(Miniature)", 
+        "6" : "Basenji", 
+        "7" : "Basset Hound", 
+        "8" : "Beagle", 
+        "9" : "Bearded Collie", 
+        "10" : "Bedlington Terrier"
+    }, 
+    "sizes" : {
+        "0" : "Extra Small (1 - 10lbs)", 
+        "1" : "Small (11 - 25lbs)", 
+        "2" : "Medium (26 - 40lbs)", 
+        "3" : "Large (41 - 70lbs)", 
+        "4" : "Extra Large (71 - 100lbs)", 
+        "5" : "Giant (100lbs - )"
+    }, 
+    "colors" : {
+        "0" : "Black", 
+        "1" : "Blue", 
+        "2" : "Grey", 
+        "3" : "Cream", 
+        "4" : "Fawn", 
+        "5" : "White", 
+        "6" : "Tan", 
+        "7" : "Multi/pattern"
+    }, 
+    "coats" : {
+        "0" : "Short", 
+        "1" : "Medium", 
+        "2" : "Long", 
+        "3" : "Curly"
+    }
+}

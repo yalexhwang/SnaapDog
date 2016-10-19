@@ -1,16 +1,19 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var mongoCreds = require('../config/mongoCreds');
+// var mongoCreds = require('../config/mongoCred');
+// console.log(mongoCreds.username)
 var User = require('../models/user');
 var Stray_entry = require('../models/stray_entry');
 var Posting = require('../models/posting');
 var Category = require('../models/category');
-mongoose.connect('mongodb://' + mongoCreds.username + ':' + mongoCreds.password + '@ds057476.mlab.com:57476/snaap_dog');
+// mongoose.connect('mongodb://' + mongoCreds.username + ':' + mongoCreds.password + '@ds057476.mlab.com:57476/snaap_dog');
+
+mongoose.connect('mongodb://' + 'yn1106' + ':' + 'yn1106' + '@ds057476.mlab.com:57476/snaap_dog');
 var bcrypt = require('bcrypt-nodejs');
 var randToken = require('rand-token');
 // LOG IN --------------------------------------------------
-router.post('/login', function(req, res, next) {
+router.post('/landing', function(req, res, next) {
     var user = req.body.user;
     User.findOne({'username': user.username}, function(err, docs) {
             if (err) {

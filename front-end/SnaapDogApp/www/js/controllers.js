@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngCordova'])
 
 .service('myLocation', function($q, $http, $window, $cordovaGeolocation) {
   this.locate = function() {
@@ -45,17 +45,17 @@ angular.module('starter.controllers', [])
   console.log('hello tab dash');
 })
 
-.controller('LogInCtrl', function($scope, $http, $stateParams, $state) {
+.controller('LogInCtrl', function($scope, $http, $stateParams, $state, $rootScope) {
   var url = "http://localhost:3000";
   $scope.user = {};
   $scope.login = function() {
-    $http.post(url + '/login', {
+    $http.post(url + '/landing', {
       user: $scope.user
     }).then(function success(rspns) {
       $rootScope.user = rspns.data.docs;
       console.log($rootScope.user);
-  $state.go('tab.dash');  //where there is main, put dash
-    }, function sutccess(rspns) {
+  $state.go('tabs.dash');  //where there is main, put dash
+    }, function success(rspns) {
       console.log(rspns);
     });
   };
@@ -91,7 +91,7 @@ angular.module('starter.controllers', [])
         user: temp
       }).then(function success(rspns) {
         console.log(rspns);
-        $location.path('/logIn');
+        $location.path('/landing');
       }, function fail(rspns) { 
         console.log("error")
       });
@@ -101,11 +101,6 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('TabsCtrl', function($scope, $ionicModal, $timeout, $ionicSideMenuDelegate) {
-  $scope.openMenuLeft = function() {
-    $ionicSideMenuDelegate.toggleLeft();
-  };
-  })
 
 
 .controller('SomethingCtrl', function($scope, $http) {
@@ -113,7 +108,11 @@ angular.module('starter.controllers', [])
 })
 
 
-.controller('mainCtrl', function($scope, $rootScope, $cordovaGeolocation, $ionicLoading, $ionicPlatform, fromDB, myLocation) {
+.controller('TabsCtrl', function($scope, $rootScope, $cordovaGeolocation, $ionicLoading, $ionicPlatform, fromDB, myLocation, $ionicModal, $timeout, $ionicSideMenuDelegate) {
+  $scope.openMenuLeft = function() {
+    $ionicSideMenuDelegate.toggleLeft();
+  };
+
   $ionicPlatform.ready(function() {
     $ionicLoading.show({
       template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Finding your location'

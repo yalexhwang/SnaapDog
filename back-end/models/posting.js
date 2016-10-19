@@ -21,14 +21,14 @@ var postingSchema = new Schema({
 			email: { type: String, required: true }
 		},
 		dog_name: { type: String },
-		reward: { type: String }
+		reward: { type: String },
 		size: { type: Number, required: true },
 		color: {  type: Number, required: true },
 		hair: { type: Number, required: true}, 
-		breed: { type: Array }
+		breed: { type: Array },
 		tag_id: { type: String },
 		description: { type: String }
-	}, {timestamps: true} 
+	}
 });
 
 module.exports = mongoose.model('posting', postingSchema);

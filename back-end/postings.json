@@ -1,0 +1,72 @@
+{ 
+    "_id" : ObjectId("5804ea45c9b06117fe8b6785"), 
+    "photo" : [
+        "200x100.jpg", 
+        "150x150.jpg"
+    ], 
+    "location" : {
+        "coords" : {
+            "lat" : 40.0, 
+            "lng" : 40.0
+        }, 
+        "address" : {
+            "line1" : "650 Ponce De Leon Ave.", 
+            "city" : "Atlanta", 
+            "state" : "GA", 
+            "zip" : "30322"
+        }
+    }, 
+    "status" : NumberInt(0), 
+    "contact" : {
+        "name" : "Kenny", 
+        "phone" : "4049991414", 
+        "email" : "kenny@gmail.com"
+    }, 
+    "dog_name" : "Thunder", 
+    "reward" : "", 
+    "size" : NumberInt(3), 
+    "coat" : NumberInt(6), 
+    "color" : NumberInt(1), 
+    "breed" : [
+        NumberInt(4), 
+        NumberInt(5)
+    ], 
+    "tag_id" : "", 
+    "description" : "Please find my dog!"
+}
+{ 
+    "_id" : ObjectId("5804ec16c9b06117fe8b678b"), 
+    "photo" : [
+        "210x120.jpg", 
+        "150x150.jpg"
+    ], 
+    "location" : {
+        "coords" : {
+            "lat" : 39.0, 
+            "lng" : -29.0
+        }, 
+        "address" : {
+            "line1" : "100 Ponce De Leon Ave.", 
+            "city" : "Atlanta", 
+            "state" : "GA", 
+            "zip" : "30301"
+        }
+    }, 
+    "status" : NumberInt(2), 
+    "contact" : {
+        "name" : "Penny", 
+        "phone" : "4043391224", 
+        "email" : "pennypenny@gmail.com"
+    }, 
+    "dog_name" : "Sunny", 
+    "reward" : "$500", 
+    "size" : NumberInt(3), 
+    "coat" : NumberInt(6), 
+    "color" : NumberInt(2), 
+    "breed" : [
+        NumberInt(2), 
+        NumberInt(5)
+    ], 
+    "tag_id" : "", 
+    "description" : "Please find my dog, help me please!!"
+}

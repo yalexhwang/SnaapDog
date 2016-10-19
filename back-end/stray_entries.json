@@ -1,0 +1,116 @@
+{ 
+    "_id" : ObjectId("5804e8a2c9b06117fe8b6779"), 
+    "photo" : [
+    ], 
+    "location" : {
+        "coords" : {
+            "lat" : 40.0, 
+            "lng" : -28.0
+        }, 
+        "address" : {
+            "line1" : "3333 Peachtree Road", 
+            "city" : "Atlanta", 
+            "state" : "GA", 
+            "zip" : "30303"
+        }
+    }, 
+    "dog_name" : "Zack", 
+    "status" : NumberInt(0), 
+    "size" : NumberInt(1), 
+    "color" : NumberInt(1), 
+    "hair" : NumberInt(1), 
+    "breed" : [
+        NumberInt(0), 
+        NumberInt(1), 
+        NumberInt(3)
+    ], 
+    "tag_id" : "", 
+    "description" : "This is my dog."
+}
+{ 
+    "_id" : ObjectId("5804e8c1c9b06117fe8b677b"), 
+    "photo" : [
+    ], 
+    "location" : {
+        "coords" : {
+            "lat" : 40.0, 
+            "lng" : -28.0
+        }, 
+        "address" : {
+            "line1" : "3333 Peachtree Road", 
+            "city" : "Atlanta", 
+            "state" : "GA", 
+            "zip" : "30303"
+        }
+    }, 
+    "dog_name" : "Zack", 
+    "status" : NumberInt(0), 
+    "size" : NumberInt(1), 
+    "color" : NumberInt(1), 
+    "hair" : NumberInt(1), 
+    "breed" : [
+        NumberInt(0), 
+        NumberInt(1), 
+        NumberInt(3)
+    ], 
+    "tag_id" : "", 
+    "description" : "This is my dog."
+}
+{ 
+    "_id" : ObjectId("5804e952c9b06117fe8b677d"), 
+    "photo" : [
+    ], 
+    "location" : {
+        "coords" : {
+            "lat" : 40.0, 
+            "lng" : -27.0
+        }, 
+        "address" : {
+            "line1" : "111 Peachtree Road", 
+            "city" : "Atlanta", 
+            "state" : "GA", 
+            "zip" : "30308"
+        }
+    }, 
+    "dog_name" : "Jenn", 
+    "status" : NumberInt(0), 
+    "size" : NumberInt(1), 
+    "color" : NumberInt(1), 
+    "hair" : NumberInt(1), 
+    "breed" : [
+        NumberInt(0), 
+        NumberInt(1), 
+        NumberInt(4)
+    ], 
+    "tag_id" : "", 
+    "description" : "This is my dog."
+}
+{ 
+    "_id" : ObjectId("5804e979c9b06117fe8b677f"), 
+    "photo" : [
+    ], 
+    "location" : {
+        "coords" : {
+            "lat" : 39.9, 
+            "lng" : -30.0
+        }, 
+        "address" : {
+            "line1" : "23 Peachtree Road", 
+            "city" : "Atlanta", 
+            "state" : "GA", 
+            "zip" : "30305"
+        }
+    }, 
+    "dog_name" : "Rainhow", 
+    "status" : NumberInt(1), 
+    "size" : NumberInt(1), 
+    "color" : NumberInt(1), 
+    "hair" : NumberInt(1), 
+    "breed" : [
+        NumberInt(1), 
+        NumberInt(3), 
+        NumberInt(5)
+    ], 
+    "tag_id" : "12345-092-12", 
+    "description" : "This is my dog."
+}
