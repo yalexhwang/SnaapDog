@@ -14,9 +14,12 @@ var bcrypt = require('bcrypt-nodejs');
 var randToken = require('rand-token');
 // LOG IN --------------------------------------------------
 router.post('/landing', function(req, res, next) {
-    var user = req.body.user;
-    User.findOne({'username': user.username}, function(err, docs) {
+    var username = req.body.username;
+    var password = req.body.password;
+
+    User.findOne({'username': username}, function(err, docs) {
             if (err) {
+                console.log("Error")
                 console.log(err);
                 res.json({
                     passFail: 0,
@@ -24,14 +27,14 @@ router.post('/landing', function(req, res, next) {
                 });
             } else {
                 if (docs == null) {
+                    console.log("else docs")
                     console.log(docs);
                     res.json({
                         passFail: 0,
                         status: "Failed at findOne, doc is null"
                     });
                 } else {
-                    console.log(docs);
-                    var passwordCheck = bcrypt.compareSync(user.password, docs.password);
+                    var passwordCheck = bcrypt.compareSync(password, docs.password);
                     console.log(passwordCheck);
                     if (passwordCheck) {
                         var token = randToken.generate(32);
@@ -45,6 +48,7 @@ router.post('/landing', function(req, res, next) {
                             });
                         });
                     } else {
+                            console.log("else pass")
                             res.json({
                                 passFail: 0,
                                 status: 'User name and password did not match.'

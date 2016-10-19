@@ -5,23 +5,23 @@
       <h2 class="landing-title">SnaapDog</h2>
       <h5>Find Your Dog in Real Time</h5>
     </div>
-  
+<form ng-submit="login()">
     <div class="list list-inset">
   <label class="item item-input">
-    <input type="text" placeholder="Userame">
+    <input type="text" ng-model="username.username" placeholder="Userame">
   </label>
   <label class="item item-input">
-    <input type="text" placeholder="Password">
+    <input type="text" ng-model="password.password" placeholder="Password">
   </label>
 </div>
 <div>
-      <a ng-click="login()" class="plain"><button class="button button-block button-positive button-calm" id="log-in-button"> Log In
-      </button></a>
+      <button class="button button-block button-positive button-calm" id="log-in-button"> Log In
+      </button>
       </div>
       <div>
       <a ng-href="#/register">Register here</a>
       </div>
-
+    </form>
 
 
   </ion-content>

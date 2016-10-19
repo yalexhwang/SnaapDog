@@ -47,17 +47,19 @@ angular.module('starter.controllers', ['ngCordova'])
 
 .controller('LogInCtrl', function($scope, $http, $stateParams, $state, $rootScope) {
   var url = "http://localhost:3000";
-  $scope.user = {};
+  $scope.username = {};
+  $scope.password = {};
   $scope.login = function() {
     $http.post(url + '/landing', {
-      user: $scope.user
+      username: $scope.username.username,
+      password: $scope.password.password
     }).then(function success(rspns) {
-      $rootScope.user = rspns.data.docs;
-      console.log($rootScope.user);
-    $state.go('tabs.dash');  //where there is main, put dash
-    console.log('Tabs dash')
-    }, function success(rspns) {
-      console.log(rspns);
+        $rootScope.user = rspns.data.docs;
+        $state.go('tabs.dash');  //where there is main, put dash
+        console.log('Tabs dash')
+    }, function failure(rspns) {
+        console.log("AJAX failed")
+        console.log(rspns);
     });
   };
 })
@@ -111,6 +113,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 .controller('TabsCtrl', function($scope, $rootScope, $cordovaGeolocation, $ionicLoading, $ionicPlatform, fromDB, myLocation, $ionicModal, $timeout, $ionicSideMenuDelegate) {
   $scope.openMenuLeft = function() {
+    console.log("ANyting?")
     $ionicSideMenuDelegate.toggleLeft();
   };
 
@@ -137,10 +140,7 @@ angular.module('starter.controllers', ['ngCordova'])
       var lat = rspns.coords.latitude;
       var lng = rspns.coords.longitude;
       myLoc = new google.maps.LatLng(lat, lng);
-      var mapElement=document.getElementById('map');
-      console.log(mapElement)
-      map = new google.maps.Map(mapElement, {
-
+      map = new google.maps.Map(document.getElementById('map'), {
         center: myLoc,
         zoom: 8
       });
