@@ -54,7 +54,8 @@ angular.module('starter.controllers', ['ngCordova'])
     }).then(function success(rspns) {
       $rootScope.user = rspns.data.docs;
       console.log($rootScope.user);
-  $state.go('tabs.dash');  //where there is main, put dash
+    $state.go('tabs.dash');  //where there is main, put dash
+    console.log('Tabs dash')
     }, function success(rspns) {
       console.log(rspns);
     });
@@ -136,7 +137,10 @@ angular.module('starter.controllers', ['ngCordova'])
       var lat = rspns.coords.latitude;
       var lng = rspns.coords.longitude;
       myLoc = new google.maps.LatLng(lat, lng);
-      map = new google.maps.Map(document.getElementById('map'), {
+      var mapElement=document.getElementById('map');
+      console.log(mapElement)
+      map = new google.maps.Map(mapElement, {
+
         center: myLoc,
         zoom: 8
       });
