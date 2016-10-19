@@ -2,7 +2,7 @@
 
 ##SnaapDog enables an open collaboration between seekers, finders, and shelters to get roaming dogs home
 
-![Alt text](img/landing.png "Home Page")
+![Alt text](img/ScreenShot2.png "Home Page")
 
 
 ### Users will be able to:
@@ -10,21 +10,17 @@
 * Upload a picture of a roaming dog and insert into the database as a sighting - tagged with key words
 * Connect with each other without revealing personal contact information
 
-Visit here: [SnaapDog](http://#.com/)
+Visit here: [Portfolio](http://shirletterly.com/)
 
 ###Requirements `npm install` once pulled
 
 
 ##Built with:
 	- Html
-	- Ionic
 	- CSS
 	- Javascript
-	- AngularJS
-	- MongoDB 
-	- ExpressJS
-	- NodeJS
-	- SASS/Compass
+	- jQuery 
+	- Bootstrap
 
 ##Sample Code
 ### this code...
@@ -75,21 +71,16 @@ Visit here: [SnaapDog](http://#.com/)
 ```
 
 
-####App Images
+####Early stages of site
 ![Alt text](img/ScreenShot1.png "Early stages of site")
 
 <!-- add a video of interaction with the site -->
 
 ##Future Add-ons
-- Ability to take picture with camera and link to map geolocation.
-- Allow users to send messages poeple with lost dog inquires.
+- Links to more current projects.
+- Ability for visitors to send messages directly from the site to me.
 - An enhanced UX/UI design that encourages more visitors.
 
-##Team Members
-###Please visit our personal profiles to see our current projects.
-- [Alex Hwang](https://github.com/yalexhwang)
-- [Shirlette Chambers](https://github.com/shirlazybrat)
-- [Summer Adhal](https://github.com/summeradhal)
-- [Danielle Withers](https://github.com/DIWithers)
 
-![Alt text](/SnaapDogApp/www/img/revolutionaries.png "Group Photo")
+###Please visit my personal profile to see more current projects.
+- [Shirlette Chambers](https://github.com/Shirlazybrat)

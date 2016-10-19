@@ -28,7 +28,7 @@
 	font-size:  50px;
 }
 
-#log-in-button {
+#log-in-button, .submit-button {
 	background-color: #4A7787;
 	display: block;
 	color: white;
@@ -40,11 +40,36 @@
 	margin-bottom: 5px;
 	text-decoration: none;
 }
-
+.login, .register {
+	text-align: center;
+}
+.submit-button  {
+	width: 100px;
+	margin-bottom: 10px;
+	border: 1px solid black;
+}
 .plain {
 	text-decoration: none;
 }
-
-#map{
-	height:  100vh;
+#map {
+	height: 250px;
 }
+.stray_listings {
+	
+	margin: 0;
+
+
+}
+.stray_listings img {
+	width: 100%;
+	max-height: 50%;
+	margin: auto;
+	text-align: center;
+}
+.activeButton {
+	background-color: lightgrey;
+}
+.inactiveButton{
+	background-color: #4A7787;
+}
+
