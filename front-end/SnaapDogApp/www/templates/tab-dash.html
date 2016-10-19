@@ -1,9 +1,14 @@
 
-<ion-view title="Home">
+<ion-view title="Snaap!">
   <ion-nav-buttons side="left">
     <button class="button button-icon button-clear ion-navicon" ng-click="openMenuLeft()"></button>
   </ion-nav-buttons>        
   <ion-content class="padding" padding="true">
+  <span>Help find {{totalEntries}} lost dogs</span>
+    <div id="map" data-tap-disabled="true"></div>
+   
+    <button class="button button-energized ion-ios-camera" ui-sref="tab.snaap"></button>
+    <button class="button" ui-sref="tab.test">Test</button>
    <h1 style="text-align: center;">Home Page</h1>
   </ion-content>
 </ion-view>

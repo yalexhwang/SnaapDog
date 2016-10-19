@@ -1,0 +1,90 @@
+<ion-view view-title="Post">
+  <ion-content class="padding">
+    <form ng-submit="submit()">
+      <div class="list">
+        <ion-list-header>
+          Action
+        </ion-list-header>
+        <label class="item item-input">
+          <span class="input-label">Owner</span>
+          <input type="text" placeholder="{{owner}}" ng-model="post.owner">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Contact</span>
+          <input type="text" ng-model="post.contact">
+        </label>
+      </div>
+
+      <div class="list">
+<!--         <label class="item item-input">
+          <span class="input-label">Photos</span>
+          <input type="file" ng-model="post.image">
+        </label> -->
+        <label class="item item-input">
+          <span class="input-label">Dog Name</span>
+          <input type="text" ng-model="post.dog_name">
+        </label>
+        <label class="item item-input">Last Seen</label>
+          <input type="date">
+          <input type="time">
+          <div id="map-sm"></div>
+        </div>
+      </div>
+
+      <div class="list">
+        <ion-item>
+          <ion-label>Breed</ion-label>
+          <ion-checkbox ng-repeat="breed in breedArr" [(ngModel)]="{{breed[0]}}">{{breed[1]}}      
+          </ion-checkbox>
+        </ion-item>
+      </div>
+
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">Sex</div>
+          <select ng-model="post.sex">
+            <option value="0">Female</option>
+            <option value="1">Male</option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">Size</div>
+          <select ng-model="post.size">
+            <option ng-repeat="size in sizeArr" value="{{size[0]}}">{{size[1]}}</option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">Color</div>
+          <select ng-model="post.color">
+            <option ng-repeat="color in colorArr" value="{{color[0]}}">{{color[1]}}</option>
+          </select>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">Coat</div>
+          <select ng-model="post.coat">
+            <option ng-repeat="coat in coatArr" value="{{coat[0]}}">{{coat[1]}}</option>
+          </select>
+        </label>
+      </div>
+      
+      <div class="list">
+        <label class="item item-input" >
+          <span class="input-label">Tag/Chip</span>
+          <input type="text" ng-model="post.tag">
+        </label>
+        <label class="item item-input" >
+          <span class="input-label">Reward</span>
+          <input type="text" ng-model="post.reward"></textarea>
+        </label>
+      </div>
+      <ion-item>
+        <ion-label stacked>Note</ion-label>
+        <ion-textarea value="?" ng-model="post.note"></ion-textarea>
+      </ion-item>
+      
+      <button class="button button-calm" type="submit">Submit</button>
+    </form>
+
+  </ion-content>
+
+</ion-view>

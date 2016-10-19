@@ -5,7 +5,8 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ui.router'])
+//put in 'ngCordova'
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -32,10 +33,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
+  //change to login?
   .state('landing', {
     url: '/landing',
     templateUrl: 'templates/landing.html',
     controller: 'LogInCtrl'
+  })
+
+  .state('camera', {
+    url: '/camera',
+    templateUrl: 'templates/camera.html',
+    controller: 'snaapCtrl'
   })
 
   .state('something', {
@@ -63,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   });
 
 
-
+// setup an abstract state for the tabs directive
   $stateProvider
    .state('tabs', {
       url: "/tabs",
@@ -109,83 +117,63 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'TabsCtrl'
       }
     }
+  })
+
+  .state('tab.main', {
+    url: '/main',
+    views: {
+      'tab-main': {
+        templateUrl: 'templates/tab-main.html',
+        controller: 'mainCtrl'
+      }
+    }
+  })
+  .state('tab.snaap', {
+    url: '/snaap',
+    views: {
+      'tab-main': {
+        templateUrl: 'templates/tab-snaap.html',
+        controller: 'snaapCtrl'
+      }
+    }
+  })
+ .state('tab.test', {
+    url: '/test',
+    views: {
+      'tab-main': {
+        templateUrl: 'templates/tab-test.html'
+      }
+    }
+  })
+  .state('tab.post', {
+    url: '/post',
+    views: {
+      'tab-post': {
+        templateUrl: 'templates/tab-post.html',
+        controller: 'postCtrl'
+      }
+    }
+  })
+  .state('tab.posted', {
+    url: '/posted',
+    views: {
+      'tab-post': {
+        templateUrl: 'templates/tab-posted.html',
+        controller: 'postCtrl'
+      }
+    }
+  })
+
+  .state('tab.listing', {
+    url: '/listing',
+    views: {
+      'tab-listing': {
+        templateUrl: 'templates/tab-listing.html',
+        controller: 'listingCtrl'
+      }
+    }
   });
 
-  
-  
-  
-
-
-//  $stateProvider
-//  .state('app', {
-//     url: '/app',
-//     abstract: true,
-//     templateUrl: 'templates/tabs.html',
-//     controller: 'SomethingCtrl'
-//   })
-// 
-
-
-    // .state('app.search', {
-    //   url: "/search",
-    //   views: {
-    //     'tabsContent' :{
-    //       templateUrl: "search.html",
-    //       controller: 'SearchCtrl'
-    //     }
-    //   }
-    // })
-    // .state('app.contact', {
-    //   url: "/contact",
-    //   views: {
-    //     'tabsContent' :{
-    //       templateUrl: "contact.html",
-    //       controller: 'PlaylistsCtrl'
-    //     },
-    //     'tabsList': {
-    //       templateUrl : "tabsBrowse.html",
-    //       controller: 'PlaylistsCtrl'
-    //     }
-    //   }
-    // })
-    // .state('app.browse', {
-    //   url: "/browse",
-    //   views: {
-    //     'tabsContent' :{
-    //       templateUrl: "browse.html"
-    //     },
-    //     'tabsList': {
-    //       templateUrl : "tabsBrowse.html"
-    //     }
-    //   }
-    // })
-    // .state('app.playlists', {
-    //   url: "/playlists",
-    //   views: {
-    //     'tabsContent' :{
-    //       templateUrl: "playlists.html",
-    //       controller: 'PlaylistsCtrl'
-    //     },
-    //     'tabsList': {
-    //       templateUrl : "tabsPlaylists.html",
-    //       controller: 'PlaylistCtrl'
-    //     }
-    //   }
-    // })
-
-    // .state('app.single', {
-    //   url: "/playlists/:playlistId",
-    //   views: {
-    //     'tabsContent' :{
-    //       templateUrl: "playlist.html",
-    //       controller: 'PlaylistCtrl'
-    //     },
-    //     'tabsList': {
-    //       templateUrl : "tabsPlaylist.html",
-    //       controller: 'PlaylistCtrl'
-    //     }
-    //   }
-    // });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/landing');
