@@ -1,11 +1,11 @@
 <ion-view view-title="Account">
-  <ion-content>
+  <!-- <ion-content> -->
     <ion-list>
     <ion-toggle class="toggle-assertive" ng-model="settings.enableFriends">
         Enable Friends
     </ion-toggle>
 
-	<ion-toggle  ng-model="settings.enableLocation">
+  <ion-toggle  ng-model="settings.enableLocation">
         Location on/off
     </ion-toggle>
 
@@ -20,10 +20,10 @@
   </div>
 
   <ul>
-  	<li class="item" ng-model="username">Name</li>
-  	<li class="item" ng-model="full_name">Full Name</li>
-  	<li class="item" ng-model="email">Email</li>
-	<li class="item" ng-model="password">Password</li>
+    <li class="item" ng-model="username">Name</li>
+    <li class="item" ng-model="full_name">Full Name</li>
+    <li class="item" ng-model="email">Email</li>
+  <li class="item" ng-model="password">Password</li>
   </ul>
 
   <a class="item item-icon-left" href="#">
@@ -51,9 +51,13 @@
     <span class="badge badge-assertive">0</span>
   </a>
 
+  <a ng-click="home()" class="plain"><button class="button button-full button-dark">
+    Home
+ </button></a>
+
 </div>
 
 
     </ion-list>
-  </ion-content>
+  <!-- </ion-content> -->
 </ion-view>
