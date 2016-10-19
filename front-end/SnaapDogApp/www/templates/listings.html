@@ -1,0 +1,24 @@
+<ion-view view-title="Browse Listings">
+    <ion-content has-header="true" has-subheader="true" padding="false">
+<!-- sorting -->
+<!-- sorting -->
+<!-- filtering -->
+        <div class="button-bar">
+            <a class="button activeButton" ng-click="data.filter='lost'">Lost</a>
+            <a class="button inactiveButton" ng-click="data.filter='found'">Found</a>
+        </div>
+<!-- filtering -->
+<ion-list>
+                <ion-item ng-repeat="stray in data.strays| filter: data.filter">
+            <div ng-click="openModal(stray)">
+                <div class="item-thumbnail-left">
+                    <img ng-src="{{stray.photo}}">
+                </div>
+            </div>
+        </ion-item>
+            </ion-list>
+</div>
+    </ion-content>
+    
+        
+</ion-view>
