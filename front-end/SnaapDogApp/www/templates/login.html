@@ -1,5 +1,11 @@
 <ion-view view-title="Login">
-  <ion-content>
+  <ion-content class="landing">
+  <div class="fullWidth">
+      <img src="img/lost_dog_with_bundle.jpeg">
+      <h2 class="landing-title">SnaapDog</h2>
+      <h5>Find Your Dog in Real Time</h5>
+    </div>
+  
     <div class="list list-inset">
   <label class="item item-input">
     <input type="text" placeholder="Userame">
@@ -8,12 +14,13 @@
     <input type="text" placeholder="Password">
   </label>
 </div>
-<div class="login">
-  <a ng-href="#/tab/dash" class="plain"><button class="button submit-button">
-  Submit
-</button></a>
-  <p>New user?      <a ng-href="#/register">Create an account.</a></p>
-</div>
+<div>
+      <a ng-href="#/login" class="plain"><button class="button" id="log-in-button"> Log In
+      </button></a>
+      </div>
+      <div>
+      <a ng-href="#/register">Register here</a>
+      </div>
 
 
   </ion-content>
