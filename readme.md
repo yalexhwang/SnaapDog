@@ -92,4 +92,4 @@ Visit here: [SnaapDog](http://#.com/)
 - [Summer Adhal](https://github.com/summeradhal)
 - [Danielle Withers](https://github.com/DIWithers)
 
-![Alt text](img/revolutionaries.png "Group Photo")
+![Alt text](/SnaapDogApp/www/img/revolutionaries.png "Group Photo")
