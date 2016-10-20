@@ -181,6 +181,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 })
 .controller('snaapCtrl', function($scope, $cordovaCamera, $ionicPlatform) {
+  console.log("snaapCtrl");
   $scope.test ="works";
   $scope.takePhoto = function () {
     var options = {
@@ -314,6 +315,7 @@ angular.module('starter.controllers', ['ngCordova'])
 })
 
 .controller('listingCtrl', function($scope, $http) {
+  console.log("listingCtrl");
   var url = "http://localhost:3000";
   $http.post(url + '/listing')
   .then(function succeess(rspns) {

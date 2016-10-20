@@ -32,43 +32,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
-  //change to login?
-  .state('landing', {
-    url: '/landing',
-    templateUrl: 'templates/landing.html',
-    controller: 'LogInCtrl'
-  })
 
-  .state('camera', {
-    url: '/camera',
-    templateUrl: 'templates/camera.html',
-    controller: 'snaapCtrl'
-  })
-
-  .state('something', {
-    url: '/something',
-    templateUrl: 'templates/tab-something.html',
-    controller: 'RegisterCtrl'
-  })
-
-  .state('account', {
-    url: '/account',
-    templateUrl: 'templates/tab-account.html',
-    controller: 'AccountCtrl'
-  })
-
-  .state('lorem', {
-    url: '/lorem',
-    templateUrl: 'templates/lorem.html'
-    // controller: 'AccountCtrl'
-  })
-
-  .state('register', {
-    url: '/register',
-    templateUrl: 'templates/register.html',
-    controller: 'RegisterCtrl'
-  });
 
 
 // setup an abstract state for the tabs directive
@@ -80,6 +44,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       controller: 'TabsCtrl'
     })
 
+   .state('landing', {
+    url: '/landing',
+    templateUrl: 'templates/landing.html',
+    controller: 'LogInCtrl'
+  })
+
    .state('tabs.dash', {
     url: '/dash',
     views: {
@@ -90,15 +60,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-// .state('tab.main', {
-//     url: '/main',
-//     views: {
-//       'tab-main': {
-//         templateUrl: 'templates/tab-main.html',
-//         controller: 'mainCtrl'
-//       }
-//     }
-//   })
 
   .state('tabs.chats', {
       url: '/tabs/chats',
@@ -109,6 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         }
       }
     })
+
   .state('tabs.chat-detail', {
       url: '/tabs/chats/:chatId',
       views: {
@@ -128,6 +90,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
+  .state('tab.listing', {
+    url: '/listing',
+    views: {
+      'tab-listing': {
+        templateUrl: 'templates/tab-listing.html',
+        controller: 'listingCtrl'
+      }
+    }
+  })
 
   .state('tab.snaap', {
     url: '/snaap',
@@ -138,14 +109,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
- // .state('tab.test', {
- //    url: '/test',
- //    views: {
- //      'tab-main': {
- //        templateUrl: 'templates/tab-test.html'
- //      }
- //    }
- //  })
+
   .state('tab.post', {
     url: '/post',
     views: {
@@ -155,25 +119,33 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
-  // .state('tab.posted', {
-  //   url: '/posted',
-  //   views: {
-  //     'tab-post': {
-  //       templateUrl: 'templates/tab-posted.html',
-  //       controller: 'postCtrl'
-  //     }
-  //   }
-  // })
+  
 
-  .state('tab.listing', {
-    url: '/listing',
-    views: {
-      'tab-listing': {
-        templateUrl: 'templates/tab-listing.html',
-        controller: 'listingCtrl'
-      }
-    }
+  .state('camera', {
+    url: '/camera',
+    templateUrl: 'templates/camera.html',
+    controller: 'snaapCtrl'
+  })
+
+  .state('something', {
+    url: '/something',
+    templateUrl: 'templates/tab-something.html',
+    controller: 'RegisterCtrl'
+  })
+
+  .state('account', {
+    url: '/account',
+    templateUrl: 'templates/tab-account.html',
+    controller: 'AccountCtrl'
+  })
+
+
+  .state('register', {
+    url: '/register',
+    templateUrl: 'templates/register.html',
+    controller: 'RegisterCtrl'
   });
+
 
 
   // if none of the above states are matched, use this as the fallback
