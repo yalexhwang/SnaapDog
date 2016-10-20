@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ngCordova'])
+angular.module('starter.controllers', [])
 
 .service('myLocation', function($q, $http, $window, $cordovaGeolocation) {
   this.locate = function() {
@@ -45,24 +45,21 @@ angular.module('starter.controllers', ['ngCordova'])
   console.log('hello tab dash');
 })
 
-.controller('LogInCtrl', function($scope, $http, $stateParams, $state, $rootScope) {
+.controller('LogInCtrl', function($scope, $http, $stateParams, $state) {
   var url = "http://localhost:3000";
-  $scope.username = {};
-  $scope.password = {};
+  $scope.user = {};
   $scope.login = function() {
-    $http.post(url + '/landing', {
-      username: $scope.username.username,
-      password: $scope.password.password
+    $http.post(url + '/login', {
+      user: $scope.user
     }).then(function success(rspns) {
-        $rootScope.user = rspns.data.docs;
-        $state.go('tabs.dash');  //where there is main, put dash
-        console.log('Tabs dash')
-    }, function failure(rspns) {
-        console.log("AJAX failed")
-        console.log(rspns);
-      });
-    };
-  })
+      $rootScope.user = rspns.data.docs;
+      console.log($rootScope.user);
+  $state.go('tab.dash');  //where there is main, put dash
+    }, function sutccess(rspns) {
+      console.log(rspns);
+    });
+  };
+})
 
 
 .controller('RegisterCtrl', function($scope, $http, $stateParams, $state) {
