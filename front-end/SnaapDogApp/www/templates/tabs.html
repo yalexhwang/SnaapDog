@@ -25,6 +25,10 @@
        <ion-nav-view name="tab-listing">Listings</ion-nav-view>
      </ion-tab>
 
+     <ion-tab title="Posts" icon-off="ion-compose" icon-on="ion-compose" ui-sref="tabs.post">
+       <ion-nav-view name="tab-post">Posts</ion-nav-view>
+     </ion-tab>
+
    </ion-tabs>
 
  </ion-side-menu-content>
@@ -39,8 +43,8 @@
        <ion-item menu-close ng-click="login()">
          Login
        </ion-item>
-       <ion-item menu-close href="#/app/dash">
-         dash
+       <ion-item menu-close ui-sref="tabs.post">
+         Post
        </ion-item>
        <ion-item menu-close ui-sref="tabs.account">
          Accounts

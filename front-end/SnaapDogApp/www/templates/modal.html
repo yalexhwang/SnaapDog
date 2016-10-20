@@ -7,9 +7,20 @@
 </ion-header-bar>
 <ion-content class="stray_listings">
 	<img src="img/{{stray.photo[0]}}">
-	<h3>Name: {{stray.dog_name}}<h3>
-    <h3>Posted By: {{stray.author.username}}</h3>
-    <h3>If Found, Contact: {{stray.contact.name}} at {{stray.contact.phone}}</h3>
+
+	<h3>Name: <h3>
+	<h4>{{stray.dog_name}}</h4>
+
+    <h3>Posted By: </h3>
+    <h4>{{stray.author.username}}</h4>
+
+    <h3>Desc:</h3>
+	<h4>{{stray.description}}</h4>
+
+    <h3>If Found, Contact: </h3>
+    <h4>{{stray.contact.name}} at {{stray.contact.phone}}</h4>
+    <h4>Or email me @: {{stray.contact.email}}</h4>
+    
 	
 </ion-content>
 
