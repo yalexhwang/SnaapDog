@@ -90,7 +90,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     }
   })
-  .state('tab.listing', {
+  .state('tabs.listing', {
     url: '/listing',
     views: {
       'tab-listing': {
@@ -100,7 +100,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('tab.snaap', {
+  .state('tabs.snaap', {
     url: '/snaap',
     views: {
       'tab-main': {
@@ -110,7 +110,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     }
   })
 
-  .state('tab.post', {
+  .state('tabs.post', {
     url: '/post',
     views: {
       'tab-post': {

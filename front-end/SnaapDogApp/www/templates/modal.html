@@ -6,10 +6,10 @@
   
 </ion-header-bar>
 <ion-content class="stray_listings">
-	<img src="{{stray.photo}}">
-	<p>Size: {{stray.size}}</p>
-	<p>Color: {{stray.color}}</p>
-	<p>Details: Lorem ipsum....<p>
+	<img src="img/{{stray.photo[0]}}">
+	<h3>Name: {{stray.dog_name}}<h3>
+    <h3>Posted By: {{stray.author.username}}</h3>
+    <h3>If Found, Contact: {{stray.contact.name}} at {{stray.contact.phone}}</h3>
 	
 </ion-content>
 

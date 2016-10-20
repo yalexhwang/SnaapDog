@@ -314,13 +314,15 @@ angular.module('starter.controllers', ['ngCordova'])
   };
 })
 
-.controller('listingCtrl', function($scope, $http) {
+.controller('listingCtrl', function($scope, $http, $ionicModal) {
   console.log("listingCtrl");
   var url = "http://localhost:3000";
   $http.post(url + '/listing')
   .then(function succeess(rspns) {
-    console.log(rspns.data);
-    $scope.starys = rspns.docs;
+    console.log(rspns.data.docs);
+    $scope.strays = rspns.data.docs;
+    // console.log($scope.docs[0].dog_name)
+    
   }, function fail(rspns) {
     console.log(rspns);
   });
@@ -352,6 +354,7 @@ angular.module('starter.controllers', ['ngCordova'])
     // Execute action
   });
 //MODAL END
+
 
 }) //end listing ctrl
 
